@@ -1,0 +1,21 @@
+AvgSalesPerPerson = 
+AVERAGEX(
+    VALUES('public chocolate_sales_data'[sales_person]), 
+    CALCULATE(SUM('public chocolate_sales_data'[amount]))
+)
+
+SalespersonColorLogic = 
+VAR CurrentSales = SUM('public chocolate_sales_data'[amount])
+
+VAR GlobalAvgSales = 
+    CALCULATE(
+        [AvgSalesPerPerson], 
+        ALLSELECTED('public chocolate_sales_data'[sales_person]))
+
+RETURN
+SWITCH(
+    TRUE(),
+    CurrentSales > (GlobalAvgSales * 1.1), "#859A87",  -- Green (Above 110% of Avg)
+    CurrentSales < (GlobalAvgSales * 0.9), "#B45A5A",  -- Red (Below 90% of Avg)
+    "#E0C27A"  -- Yellow (Everyone else in the middle)
+)
