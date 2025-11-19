@@ -15,15 +15,27 @@ sales trends, track KPIs, and extract actionable insights.
 - **Team Performance:** Team ranking, performance bands, average reference line  
 - **Global Comparison:** Product × Country matrix, ranked by total sales
 
-## 🛠 Workflow
-**1. ETL** | **Python (Pandas)** | Data cleaning, type conversion, handling nulls, and preparing CSV for staging. |
-| **2. Modeling** | **PostgreSQL** | Creating views, aggregations, and using **Window Functions (RANK)** for logic. |
-| **3. Visualization** | **Power BI** | DAX measures, conditional formatting, custom UI design, and interactivity. |
-### 1️⃣ Extract – Loading Raw Data  
-**Python (Pandas)** | Data cleaning, type conversion, handling nulls, and preparing CSV for staging. 
 
-### 2️⃣ Data Modeling
-Creating views, aggregations, and using Window Functions(RANK) for logic.
+## 🛠 ETL Pipeline 
 
-### 3️⃣ Visualization 
-**Power BI** | DAX measures, conditional formatting, custom UI design, and interactivity. |
+This project uses a complete ETL workflow built with Python/Pandas and SQLAlchemy for loading data into PostgreSQL.
+
+### 1️⃣ Extract  
+Raw CSV files from `data/raw/` are imported into Python.
+
+### 2️⃣ Transform  
+Data is cleaned and standardized, including:  
+- Normalizing column names and data types  
+- Parsing dates  
+- Handling missing or inconsistent records
+
+### 3️⃣ Load  
+Cleaned datasets are loaded into PostgreSQL using SQLAlchemy as fact and dimension tables.
+
+### 4️⃣ SQL Modeling  
+Multiple analytical SQL views are created to support reporting and make data consumption easier inside Power BI.
+
+### 5️⃣ Export  
+A complete 4-page interactive Power BI dashboard is built using the processed data.  
+It includes KPIs, trend analysis, product insights, team performance, and global comparisons.
+
