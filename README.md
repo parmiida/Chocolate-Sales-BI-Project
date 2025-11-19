@@ -1,4 +1,6 @@
 # 🍫 Chocolate Sales BI Project
+![Dashboard Preview](outputs/overview.jpg)
+
 A comprehensive end-to-end Business Intelligence project analyzing chocolate sales data.
 Includes a complete ETL pipeline using Python/Pandas, PostgreSQL data modeling, SQL views, and DAX measures inside an interactive Power BI dashboard designed to uncover  
 sales trends, track KPIs, and extract actionable insights.
