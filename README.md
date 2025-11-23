@@ -11,7 +11,7 @@ Here is a quick guide to the files in this repository:
 * **`dashboard/`**: Contains the final **Power BI file (.pbix)**. You can open this to explore the interactive report.
 * **`etl/`**: Contains the **Python scripts** used for data cleaning and the **SQL queries** used for creating the analytical views.
 * **`outputs/`**: High-resolution **screenshots** and the **PDF export** of the dashboard.
-* **`data/`**: Contains the documentation of raw and processed data schemas.
+* **`data/`**: Contains the raw and processed datasets.
 
 
 ## 🚀 What’s included
